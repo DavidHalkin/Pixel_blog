@@ -1,0 +1,42 @@
+#header{
+	display: flex;
+	flex-flow: row wrap;
+	align-items:center;
+	padding: 15px 0 40px;
+	@media (max-width: 550px){
+		justify-content:center;
+		padding-bottom: 10px;
+	}
+	.logo{
+		display: inline-block;
+		width: 190px;
+		img{
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	.sign-in{
+		margin: 0;
+		padding: 15px 0;
+		list-style: none;
+		font-size: 16px;
+		line-height: 18px;
+		flex-grow: 1;
+		display: flex;
+		justify-content:flex-end;
+		flex-flow: row wrap;
+		@media (max-width: 550px){
+			justify-content:center;
+			width: 100%;
+		}
+		li{
+			padding-left: 33px;
+			&:first-child{
+				padding-left: 0;
+			}
+			@media (max-width: 550px){
+				padding: 0 16px !important;
+			}
+		}
+	}
+}
