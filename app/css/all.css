@@ -343,15 +343,6 @@ body {
   font-weight: 700;
 }
 
-h1 {
-  margin: 16px 0 0 0;
-  font-size: 32px;
-  line-height: 34px;
-  color: #000;
-  font-weight: 500;
-  padding-bottom: 15px;
-}
-
 h2 {
   margin: 0;
   font-size: 26px;
@@ -367,6 +358,20 @@ h3 {
   line-height: 24px;
   font-weight: 700;
   padding: 10px 0 10px;
+}
+
+h1, .title {
+  margin: 16px 0 0 0;
+  font-size: 32px;
+  line-height: 34px;
+  color: #000;
+  font-weight: 500;
+  padding-top: 0;
+  padding-bottom: 15px;
+}
+
+.title a {
+  color: #000;
 }
 
 p {
