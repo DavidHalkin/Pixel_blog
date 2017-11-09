@@ -30,7 +30,8 @@
 			width: 100%;
 		}
 		li{
-			padding-left: 33px;
+			padding:0 0 0 33px;
+			&:before{content: none;}
 			&:first-child{
 				padding-left: 0;
 			}

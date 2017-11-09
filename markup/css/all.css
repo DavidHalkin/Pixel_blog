@@ -154,7 +154,11 @@ article, aside, audio, canvas, datalist, details, figcaption, figure, footer, he
 }
 
 #header .sign-in li {
-  padding-left: 33px;
+  padding: 0 0 0 33px;
+}
+
+#header .sign-in li:before {
+  content: none;
 }
 
 #header .sign-in li:first-child {
@@ -253,12 +257,90 @@ article, aside, audio, canvas, datalist, details, figcaption, figure, footer, he
   padding-bottom: 10px;
 }
 
+#footer ul li:before {
+  content: none;
+}
+
 #footer ul li:first-child {
   padding-left: 0;
 }
 
 body {
   font: 16px/18px 'Roboto', sans-serif;
+}
+
+.blockquote {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 20px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 570px) {
+  .blockquote {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  .blockquote blockquote {
+    padding: 0 !important;
+  }
+  .blockquote .img-quote {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+  .blockquote .img-quote img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+.blockquote blockquote {
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+  margin: 0;
+  padding: 0 0 5px 30px;
+}
+
+.blockquote blockquote q {
+  margin: 0;
+  padding: 0;
+  font-size: 26px;
+  line-height: 34px;
+  color: #333;
+  position: relative;
+}
+
+.blockquote blockquote q:after {
+  content: '"';
+  font: 26px/34px 'Roboto', sans-serif;
+  color: #ccc;
+}
+
+.blockquote blockquote q:before {
+  content: '"';
+  position: absolute;
+  left: -12px;
+  top: 0;
+  font: 26px/34px 'Roboto', sans-serif;
+  color: #ccc;
+}
+
+.blockquote blockquote q strong {
+  font-weight: 700;
 }
 
 h1 {
@@ -270,11 +352,81 @@ h1 {
   padding-bottom: 15px;
 }
 
+h2 {
+  margin: 0;
+  font-size: 26px;
+  line-height: 28px;
+  font-weight: 700;
+  padding: 25px 0 10px;
+}
+
+h3 {
+  margin: 0;
+  color: #000;
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: 700;
+  padding: 10px 0 10px;
+}
+
 p {
   margin: 0;
   font-size: 18px;
   line-height: 26px;
   padding-bottom: 26px;
+}
+
+p strong {
+  font-weight: 700;
+}
+
+ol {
+  margin: 0;
+  padding: 20px 0 20px 15px;
+  counter-reset: li;
+  list-style: none;
+}
+
+ol li {
+  position: relative;
+  padding: 0 0 10px 23px;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+ol li:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #2196f3;
+  font: 18px/26px 'Roboto', sans-serif;
+  content: counter(li);
+  counter-increment: li;
+}
+
+ul {
+  margin: 0;
+  padding: 0 0 25px 12px;
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  padding: 0 0 10px 25px;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+ul li:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: #2196f3;
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
 }
 
 .wrapper {
@@ -392,6 +544,11 @@ p {
 
 #sidebar ul li {
   width: 100%;
+  padding: 0;
+}
+
+#sidebar ul li:before {
+  content: none;
 }
 
 #sidebar ul li.active a {
@@ -531,6 +688,10 @@ p {
   margin: 5px 0;
 }
 
+.content-info .heading ul li:before {
+  content: none;
+}
+
 .content-info .search {
   border: 1px solid #666;
   -webkit-border-radius: 15px;
@@ -595,6 +756,18 @@ p {
 
 .post {
   padding-bottom: 55px;
+}
+
+.post.one-post {
+  padding-bottom: 0;
+}
+
+.post.one-post + .tags-block {
+  padding: 20px 0;
+}
+
+.post h1 a {
+  color: #000;
 }
 
 .post img {
@@ -823,4 +996,37 @@ p {
   .subscribe-block img {
     display: none;
   }
+}
+
+.post-nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 30px;
+}
+
+.post-nav .p-soc {
+  padding: 15px;
+  border: 1px solid #e9e9e9;
+  -webkit-border-radius: 25px;
+          border-radius: 25px;
+  margin: 10px 0;
+}
+
+.comments {
+  margin-top: 50px;
 }

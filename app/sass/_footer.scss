@@ -42,6 +42,7 @@
 			padding-left: 33px;
 			padding-top: 10px;
 			padding-bottom: 10px;
+			&:before{content: none;}
 			&:first-child{
 				padding-left: 0;
 			}
